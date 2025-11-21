@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Childhood Developmental Assessment Tool - Enhanced Version</title>
+    
+    <!-- Modern Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        @media print {
+            @page { 
+                size: A4;
+                margin: 15mm;
+            }
+            
+            body { 
+                background: white !important; 
+                padding: 0 !important;
+                font-family: 'Arial', sans-serif;
+                color: #000 !important;
+                font-size: 10pt !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                max-width: 100% !important; 
+                border-radius: 0 !important; 
+                padding: 0 !important;
+            }
+            
+            .no-print { display: none !important; }
+            .section { display: none !important; }
+            #section7 { display: none !important; }
+            
+            .print-report { 
+                display: block !important; 
+                page-break-inside: avoid;
+            }
+            
+            .print-header {
+                text-align: center;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #000;
+            }
+            
+            .print-header h1 { 
+                font-size: 16pt; 
+                margin-bottom: 5px; 
+                color: #000; 
+                font-weight: bold; 
+            }
+            
+            .print-header h2 { 
+                font-size: 12pt; 
+                margin-bottom: 8px; 
+                color: #333; 
+            }
+            
+            .report-meta {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                margin: 15px 0;
+                padding: 10px;
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+            }
+            
+            .intro-message {
+                margin: 15px 0;
+                padding: 10px;
+                background: #f9f9f9;
+                border-left: 3px solid #667eea;
+                font-size: 10pt;
+                line-height: 1.5;
+            }
+            
+            .result-summary {
+                margin: 15px 0;
+            }
+            
+            .result-summary h3 {
+                font-size: 12pt;
+                margin-bottom: 10px;
+                color: #000;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 5px;
+            }
+            
+            .indicator-compact {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 10px;
+                margin-bottom: 8px;
+                padding: 5px;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .indicator-label-print {
+                font-weight: 600;
+            }
+            
+            .indicator-value-print {
+                text-align: right;
+                font-weight: 500;
+            }
+            
+            .recommendations-compact {
+                margin: 15px 0;
+                padding: 10px;
+                background: #f9f9f9;
+            }
+            
+            .recommendations-compact h3 {
+                font-size: 11pt;
+                margin-bottom: 8px;
+                color: #000;
+            }
+            
+            .recommendations-compact ul {
+                margin-left: 20px;
+                font-size: 9pt;
+                line-height: 1.4;
+            }
+            
+            .recommendations-compact li {
+                margin-bottom: 5px;
+            }
+            
+            .disclaimer-print {
+                border: 1px solid #999;
+                padding: 10px;
+                margin: 15px 0;
+                font-size: 8pt;
+                background: #fff9e6;
+            }
+            
+            .signature-section-print {
+                margin-top: 30px;
+                page-break-inside: avoid;
+            }
+            
+            .signature-row-print {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 40px;
+            }
+            
+            .signature-block-print {
+                text-align: center;
+            }
+            
+            .signature-line-print {
+                border-top: 1px solid #000;
+                margin-bottom: 5px;
+                margin-top: 40px;
+            }
+            
+            .signature-label-print {
+                font-size: 10pt;
+                font-weight: bold;
+            }
+            
+            .two-column {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            padding: 40px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 0.95em;
+            letter-spacing: 0.3px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #667eea;
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.5;
+        }
+
+        .question-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #e1e8ed;
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .question-text {
+            font-size: 1.05em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .slider-container {
+            margin: 20px 0;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 10px;
+            background: linear-gradient(to right, #4CAF50, #FFC107, #FF5722);
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: 2px solid #667eea;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: 2px solid #667eea;
+        }
+
+        .slider-value {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            border-color: #667eea;
+            background: #f3f4ff;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .radio-option input[type="radio"]:checked + label {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, #2196F3 0%, #42a5f5 100%);
+            color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .results-container {
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .result-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .result-header {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .indicator {
+            margin-bottom: 20px;
+        }
+
+        .indicator-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: 600;
+            transition: width 1s ease;
+        }
+
+        .recommendations {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ffc107;
+            margin-top: 25px;
+        }
+
+        .recommendations h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .recommendations ul {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        .recommendations li {
+            margin-bottom: 10px;
+            color: #533f03;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .modal-body {
+            line-height: 1.8;
+            color: #495057;
+        }
+
+        .modal-body h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .modal-body ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        /* Print Report Styles */
+        .print-report {
+            display: none;
+            padding: 40px;
+            background: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .disclaimer-print {
+            background: #fff9e6;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .disclaimer-print h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e1e8ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .progress-step.completed {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .nav-buttons {
+                position: static;
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .radio-group {
+                flex-direction: column;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav-buttons no-print">
+                <button class="nav-btn" onclick="showAbout()">About</button>
+                <button class="nav-btn" onclick="showReferences()">References</button>
+            </div>
+            <h2>Early Childhood</h2>
+            <h1>Developmental Assessment Tool</h1>
+            <p>Comprehensive Screening for Ages 3-6</p>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="progress-indicator no-print" id="progressIndicator">
+            <div class="progress-step active" id="step1">1</div>
+            <div class="progress-step" id="step2">2</div>
+            <div class="progress-step" id="step3">3</div>
+            <div class="progress-step" id="step4">4</div>
+            <div class="progress-step" id="step5">5</div>
+            <div class="progress-step" id="step6">6</div>
+            <div class="progress-step" id="step7">✓</div>
+        </div>
+
+        <!-- Section 1: School & Student Information -->
+        <div id="section1" class="section active">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">School & Student Information</h2>
+            
+            <div class="form-group">
+                <label for="schoolName">School/Center Name *</label>
+                <input type="text" id="schoolName" required placeholder="Enter school or center name">
+            </div>
+
+            <div class="form-group">
+                <label for="studentName">Student Name *</label>
+                <input type="text" id="studentName" required placeholder="Enter student's full name">
+            </div>
+
+            <div class="form-group">
+                <label for="studentAge">Student Age (years) *</label>
+                <input type="number" id="studentAge" min="3" max="6" required placeholder="3-6 years">
+            </div>
+
+            <div class="form-group">
+                <label for="studentGender">Gender</label>
+                <select id="studentGender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not">Prefer not to say</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherName">Teacher/Evaluator Name *</label>
+                <input type="text" id="teacherName" required placeholder="Enter teacher or evaluator name">
+            </div>
+
+            <div class="form-group">
+                <label for="supervisorName">Supervisor/Principal Name *</label>
+                <input type="text" id="supervisorName" required placeholder="Enter supervisor or principal name">
+            </div>
+
+            <div class="form-group">
+                <label for="parentName">Parent/Guardian Name *</label>
+                <input type="text" id="parentName" required placeholder="Enter parent or guardian name">
+            </div>
+
+            <div class="form-group">
+                <label for="observationPeriod">Observation Period</label>
+                <select id="observationPeriod">
+                    <option value="1week">Past Week</option>
+                    <option value="2weeks">Past 2 Weeks</option>
+                    <option value="1month" selected>Past Month</option>
+                    <option value="3months">Past 3 Months</option>
+                </select>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="validateAndProceed()">Begin Assessment →</button>
+            </div>
+        </div>
+
+        <!-- Section 2: ADHD Indicators -->
+        <div id="section2" class="section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">Attention & Focus Assessment</h2>
+            
+            <div class="question-card">
+                <div class="question-text">1. How often does the student have difficulty sustaining attention in tasks or play activities?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="adhd1" min="0" max="4" value="0">
+                    <div class="slider-value" id="adhd1-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">2. How frequently does the student seem to not listen when spoken to directly?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="adhd2" min="0" max="4" value="0">
+                    <div class="slider-value" id="adhd2-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">3. How often does the student fidget with hands/feet or squirm in their seat?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="adhd3" min="0" max="4" value="0">
+                    <div class="slider-value" id="adhd3-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. How frequently does the student have difficulty waiting their turn?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="adhd4" min="0" max="4" value="0">
+                    <div class="slider-value" id="adhd4-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">5. How often does the student interrupt or intrude on others?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="adhd5" min="0" max="4" value="0">
+                    <div class="slider-value" id="adhd5-value">Never</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="previousSection()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextSection()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Section 3: ASD Indicators -->
+        <div id="section3" class="section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">Social Communication Assessment</h2>
+            
+            <div class="question-card">
+                <div class="question-text">1. How well does the student make eye contact during conversations?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="asd1" min="0" max="4" value="4">
+                    <div class="slider-value" id="asd1-value">Always</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">2. How well does the student engage in back-and-forth conversation?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="asd2" min="0" max="4" value="4">
+                    <div class="slider-value" id="asd2-value">Always</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">3. How well does the student understand non-verbal cues (facial expressions, gestures)?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="asd3" min="0" max="4" value="4">
+                    <div class="slider-value" id="asd3-value">Always</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. How flexible is the student with changes in routine?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="asd4" min="0" max="4" value="4">
+                    <div class="slider-value" id="asd4-value">Very flexible</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">5. How well does the student engage in imaginative play?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="asd5" min="0" max="4" value="4">
+                    <div class="slider-value" id="asd5-value">Very well</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="previousSection()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextSection()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Section 4: Learning Difficulties -->
+        <div id="section4" class="section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">Learning & Development Assessment</h2>
+            
+            <div class="question-card">
+                <div class="question-text">1. Can the student recognize and name basic colors?</div>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="ld1" id="ld1-a" value="0">
+                        <label for="ld1-a">No</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="ld1" id="ld1-b" value="1" checked>
+                        <label for="ld1-b">Yes</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">2. How often does the student struggle with letter or number recognition?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="ld2" min="0" max="4" value="0">
+                    <div class="slider-value" id="ld2-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">3. How frequently does the student have difficulty following multi-step instructions?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="ld3" min="0" max="4" value="0">
+                    <div class="slider-value" id="ld3-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. How well does the student express themselves verbally?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="ld4" min="0" max="4" value="4">
+                    <div class="slider-value" id="ld4-value">Very well</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">5. How often does the student confuse similar-looking letters or numbers?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="ld5" min="0" max="4" value="0">
+                    <div class="slider-value" id="ld5-value">Never</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="previousSection()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextSection()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Section 5: Emotional Regulation -->
+        <div id="section5" class="section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">Emotional Regulation Assessment</h2>
+            
+            <div class="question-card">
+                <div class="question-text">1. How often does the student appear excessively worried or anxious?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="anx1" min="0" max="4" value="0">
+                    <div class="slider-value" id="anx1-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">2. How frequently does the student have difficulty separating from parents/caregivers?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="anx2" min="0" max="4" value="0">
+                    <div class="slider-value" id="anx2-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">3. How often does the student complain of physical symptoms (stomachaches, headaches) without medical cause?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="anx3" min="0" max="4" value="0">
+                    <div class="slider-value" id="anx3-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. How frequently does the student avoid social situations or activities?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="anx4" min="0" max="4" value="0">
+                    <div class="slider-value" id="anx4-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">5. How often does the student have difficulty calming down when upset?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="anx5" min="0" max="4" value="0">
+                    <div class="slider-value" id="anx5-value">Never</div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="previousSection()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextSection()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Section 6: Behavioral Patterns -->
+        <div id="section6" class="section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">Behavioral Patterns Assessment</h2>
+            
+            <div class="question-card">
+                <div class="question-text">1. How often does the student argue with adults?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="odd1" min="0" max="4" value="0">
+                    <div class="slider-value" id="odd1-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">2. How frequently does the student deliberately annoy others?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="odd2" min="0" max="4" value="0">
+                    <div class="slider-value" id="odd2-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">3. How often does the student blame others for their mistakes?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="odd3" min="0" max="4" value="0">
+                    <div class="slider-value" id="odd3-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">4. How frequently is the student touchy or easily annoyed?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="odd4" min="0" max="4" value="0">
+                    <div class="slider-value" id="odd4-value">Never</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text">5. How often does the student display angry or resentful behavior?</div>
+                <div class="slider-container">
+                    <input type="range" class="slider" id="odd5" min="0" max="4" value="0">
+                    <div class="slider-value" id="odd5-value">Never</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="teacherComments">Additional Observations (Optional)</label>
+                <textarea id="teacherComments" placeholder="Please share any additional observations about the student's behavior, strengths, or areas of concern..."></textarea>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="previousSection()">← Previous</button>
+                <button class="btn btn-success" onclick="calculateResults()">Complete Assessment</button>
+            </div>
+        </div>
+
+        <!-- Section 7: Results -->
+        <div id="section7" class="section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; font-size: 1.8em;">Assessment Results</h2>
+            
+            <div class="results-container">
+                <div id="studentInfo"></div>
+                <div id="assessmentDate"></div>
+                
+                <div id="resultsDisplay"></div>
+                
+                <div class="btn-group">
+                    <button class="btn btn-print no-print" onclick="printReport()">🖨️ Print Report</button>
+                    <button class="btn btn-primary no-print" onclick="resetAssessment()">New Assessment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            <h2 class="modal-header">About This Assessment Tool</h2>
+            <div class="modal-body">
+                <p>The Early Childhood Developmental Assessment Tool is designed to help educators and parents identify potential developmental concerns in children aged 3-6 years.</p>
+                
+                <h3>Purpose</h3>
+                <ul>
+                    <li>Provide early screening for common developmental concerns</li>
+                    <li>Guide conversations between teachers and parents</li>
+                    <li>Identify children who may benefit from additional support</li>
+                    <li>Track developmental progress over time</li>
+                </ul>
+
+                <h3>What This Tool Assesses</h3>
+                <ul>
+                    <li><strong>Attention & Focus:</strong> ADHD indicators</li>
+                    <li><strong>Social Communication:</strong> ASD indicators</li>
+                    <li><strong>Learning Development:</strong> Learning difficulty indicators</li>
+                    <li><strong>Emotional Regulation:</strong> Anxiety indicators</li>
+                    <li><strong>Behavioral Patterns:</strong> ODD indicators</li>
+                </ul>
+
+                <h3>Important Note</h3>
+                <p style="color: #dc3545; font-weight: 600;">This is a screening tool only and does not provide medical diagnosis. Results should be discussed with qualified healthcare professionals for proper evaluation and diagnosis.</p>
+
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Complete all student information fields</li>
+                    <li>Answer each assessment question based on observations</li>
+                    <li>Review the generated report</li>
+                    <li>Share results with parents and relevant professionals</li>
+                    <li>Use recommendations to support the child's development</li>
+                </ol>
+
+                <h3>Version Information</h3>
+                <p>Version 2.0 - Enhanced Edition<br>
+                Last Updated: 11/20/2025<br>
+                Developed for educational screening purposes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- References Modal -->
+    <div id="referencesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('referencesModal')">&times;</span>
+            <h2 class="modal-header">Scientific References</h2>
+            <div class="modal-body">
+                <h3>ADHD Assessment References</h3>
+                <ul>
+                    <li>American Psychiatric Association. (2022). <em>Diagnostic and Statistical Manual of Mental Disorders</em> (5th ed., text rev.). Washington, DC: Author.</li>
+                    <li>DuPaul, G. J., Power, T. J., Anastopoulos, A. D., & Reid, R. (2016). <em>ADHD Rating Scale-5 for Children and Adolescents: Checklists, Norms, and Clinical Interpretation</em>. New York: Guilford Press.</li>
+                    <li>Wolraich, M. L., et al. (2019). Clinical Practice Guideline for the Diagnosis, Evaluation, and Treatment of ADHD in Children and Adolescents. <em>Pediatrics</em>, 144(4), e20192528.</li>
+                </ul>
+
+                <h3>ASD Screening References</h3>
+                <ul>
+                    <li>Lord, C., Elsabbagh, M., Baird, G., & Veenstra-Vanderweele, J. (2018). Autism spectrum disorder. <em>The Lancet</em>, 392(10146), 508-520.</li>
+                    <li>Robins, D. L., Fein, D., & Barton, M. (2009). <em>Modified Checklist for Autism in Toddlers, Revised (M-CHAT-R)</em>. Self-published.</li>
+                    <li>Zwaigenbaum, L., et al. (2015). Early Identification of Autism Spectrum Disorder: Recommendations for Practice and Research. <em>Pediatrics</em>, 136(Supplement 1), S10-S40.</li>
+                </ul>
+
+                <h3>Learning Difficulties References</h3>
+                <ul>
+                    <li>Fletcher, J. M., Lyon, G. R., Fuchs, L. S., & Barnes, M. A. (2018). <em>Learning Disabilities: From Identification to Intervention</em> (2nd ed.). New York: Guilford Press.</li>
+                    <li>Shaywitz, S. E., & Shaywitz, B. A. (2020). Overcoming Dyslexia (2nd ed.). New York: Knopf.</li>
+                    <li>National Institute of Child Health and Human Development. (2000). <em>Report of the National Reading Panel: Teaching Children to Read</em>. Washington, DC: U.S. Government Printing Office.</li>
+                </ul>
+
+                <h3>Anxiety Assessment References</h3>
+                <ul>
+                    <li>Birmaher, B., et al. (1997). The Screen for Child Anxiety Related Emotional Disorders (SCARED). <em>Journal of the American Academy of Child & Adolescent Psychiatry</em>, 36(4), 545-553.</li>
+                    <li>Spence, S. H. (1998). A measure of anxiety symptoms among children. <em>Behaviour Research and Therapy</em>, 36(5), 545-566.</li>
+                    <li>Creswell, C., Waite, P., & Hudson, J. (2020). Practitioner Review: Anxiety disorders in children and young people. <em>Journal of Child Psychology and Psychiatry</em>, 61(7), 744-762.</li>
+                </ul>
+
+                <h3>ODD Assessment References</h3>
+                <ul>
+                    <li>Burke, J. D., Boylan, K., Rowe, R., et al. (2014). Identifying the irritability dimension of ODD. <em>Journal of Abnormal Psychology</em>, 123(4), 841-851.</li>
+                    <li>Stringaris, A., & Goodman, R. (2009). Three dimensions of oppositionality in youth. <em>Journal of Child Psychology and Psychiatry</em>, 50(3), 216-223.</li>
+                    <li>Riley, M., Ahmed, S., & Locke, A. (2016). Common Questions About Oppositional Defiant Disorder. <em>American Family Physician</em>, 93(7), 586-591.</li>
+                </ul>
+
+                <h3>General Early Childhood Development</h3>
+                <ul>
+                    <li>Centers for Disease Control and Prevention. (2024). <em>Learn the Signs. Act Early.</em> Atlanta, GA: Author.</li>
+                    <li>Shonkoff, J. P., & Phillips, D. A. (Eds.). (2000). <em>From Neurons to Neighborhoods: The Science of Early Childhood Development</em>. Washington, DC: National Academy Press.</li>
+                    <li>Zero to Three. (2016). <em>DC:0-5™: Diagnostic Classification of Mental Health and Developmental Disorders of Infancy and Early Childhood</em>. Washington, DC: Author.</li>
+                </ul>
+
+                <p style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <strong>Note:</strong> These references represent current best practices in early childhood developmental assessment. This tool synthesizes evidence-based screening approaches but should not replace professional clinical evaluation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Report Template -->
+    <div id="printReport" class="print-report">
+        <div class="print-header">
+            <h1>Early Childhood Developmental Assessment Report</h1>
+            <h2 id="printSchoolName"></h2>
+        </div>
+
+        <div class="report-meta" id="printMeta"></div>
+
+        <div class="intro-message" id="printIntro"></div>
+
+        <div class="result-summary">
+            <h3>Assessment Results Summary</h3>
+            <div id="printResults"></div>
+        </div>
+
+        <div class="two-column">
+            <div class="recommendations-compact" id="printParentRecommendations"></div>
+            <div class="recommendations-compact" id="printTeacherStrategies"></div>
+        </div>
+
+        <div class="recommendations-compact" id="printTeacherComments" style="display: none;">
+            <h3>Teacher's Additional Observations</h3>
+            <p id="printCommentsText"></p>
+        </div>
+
+        <div class="disclaimer-print">
+            <h3>Important Notice</h3>
+            <p>This screening tool provides preliminary observations only and does not constitute a medical or psychological diagnosis. Results should be interpreted by qualified professionals. If concerns are identified, please consult with your child's pediatrician or a developmental specialist for comprehensive evaluation.</p>
+        </div>
+
+        <div class="signature-section-print">
+            <div class="signature-row-print">
+                <div class="signature-block-print">
+                    <div class="signature-line-print"></div>
+                    <div class="signature-label-print" id="printTeacherName"></div>
+                    <div class="signature-title-print">Teacher/Evaluator</div>
+                </div>
+                <div class="signature-block-print">
+                    <div class="signature-line-print"></div>
+                    <div class="signature-label-print" id="printSupervisorName"></div>
+                    <div class="signature-title-print">Supervisor/Principal</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 7;
+        let assessmentResults = {};
+
+        // Slider value labels
+        const sliderLabels = {
+            frequency: ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'],
+            quality: ['Never', 'Poorly', 'Fair', 'Well', 'Always'],
+            flexibility: ['Very rigid', 'Rigid', 'Somewhat flexible', 'Flexible', 'Very flexible'],
+            wellbeing: ['Never', 'Poorly', 'Fair', 'Well', 'Very well']
+        };
+
+        // Initialize sliders
+        document.querySelectorAll('.slider').forEach(slider => {
+            slider.addEventListener('input', function() {
+                updateSliderValue(this.id);
+            });
+        });
+
+        function updateSliderValue(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const value = parseInt(slider.value);
+            const valueDisplay = document.getElementById(sliderId + '-value');
+            
+            let labels;
+            if (sliderId.startsWith('asd') && (sliderId === 'asd1' || sliderId === 'asd2' || sliderId === 'asd3')) {
+                labels = sliderLabels.quality;
+            } else if (sliderId === 'asd4') {
+                labels = sliderLabels.flexibility;
+            } else if (sliderId === 'asd5' || sliderId === 'ld4') {
+                labels = sliderLabels.wellbeing;
+            } else {
+                labels = sliderLabels.frequency;
+            }
+            
+            valueDisplay.textContent = labels[value];
+        }
+
+        function updateProgressIndicator() {
+            for (let i = 1; i <= totalSections; i++) {
+                const step = document.getElementById(`step${i}`);
+                if (i < currentSection) {
+                    step.classList.add('completed');
+                    step.classList.remove('active');
+                } else if (i === currentSection) {
+                    step.classList.add('active');
+                    step.classList.remove('completed');
+                } else {
+                    step.classList.remove('active', 'completed');
+                }
+            }
+        }
+
+        function validateAndProceed() {
+            // Validate required fields
+            const requiredFields = ['schoolName', 'studentName', 'studentAge', 'teacherName', 'supervisorName', 'parentName'];
+            let allValid = true;
+            
+            for (const fieldId of requiredFields) {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#dc3545';
+                    allValid = false;
+                } else {
+                    field.style.borderColor = '#e1e8ed';
+                }
+            }
+            
+            if (!allValid) {
+                alert('Please fill in all required fields marked with *');
+                return;
+            }
+            
+            // Age validation
+            const age = parseInt(document.getElementById('studentAge').value);
+            if (age < 3 || age > 6) {
+                alert('This assessment is designed for children aged 3-6 years');
+                return;
+            }
+            
+            nextSection();
+        }
+
+        function nextSection() {
+            if (currentSection < totalSections) {
+                document.getElementById(`section${currentSection}`).classList.remove('active');
+                currentSection++;
+                document.getElementById(`section${currentSection}`).classList.add('active');
+                updateProgressIndicator();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function previousSection() {
+            if (currentSection > 1) {
+                document.getElementById(`section${currentSection}`).classList.remove('active');
+                currentSection--;
+                document.getElementById(`section${currentSection}`).classList.add('active');
+                updateProgressIndicator();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function calculateResults() {
+            // Gather all data
+            const schoolName = document.getElementById('schoolName').value;
+            const studentName = document.getElementById('studentName').value;
+            const studentAge = document.getElementById('studentAge').value;
+            const studentGender = document.getElementById('studentGender').value;
+            const teacherName = document.getElementById('teacherName').value;
+            const supervisorName = document.getElementById('supervisorName').value;
+            const parentName = document.getElementById('parentName').value;
+            const observationPeriod = document.getElementById('observationPeriod').value;
+            const teacherComments = document.getElementById('teacherComments').value;
+
+            // Calculate ADHD score (higher values = more concern)
+            let adhdTotal = 0;
+            for (let i = 1; i <= 5; i++) {
+                adhdTotal += parseInt(document.getElementById(`adhd${i}`).value);
+            }
+            const adhdScore = (adhdTotal / 20) * 100;
+
+            // Calculate ASD score (lower values = more concern, so invert)
+            let asdTotal = 0;
+            for (let i = 1; i <= 5; i++) {
+                asdTotal += (4 - parseInt(document.getElementById(`asd${i}`).value));
+            }
+            const asdScore = (asdTotal / 20) * 100;
+
+            // Calculate Learning Difficulties score
+            const ld1 = document.querySelector('input[name="ld1"]:checked').value === '0' ? 4 : 0;
+            const ld2 = parseInt(document.getElementById('ld2').value);
+            const ld3 = parseInt(document.getElementById('ld3').value);
+            const ld4 = 4 - parseInt(document.getElementById('ld4').value);
+            const ld5 = parseInt(document.getElementById('ld5').value);
+            const ldTotal = ld1 + ld2 + ld3 + ld4 + ld5;
+            const ldScore = (ldTotal / 20) * 100;
+
+            // Calculate Anxiety score
+            let anxTotal = 0;
+            for (let i = 1; i <= 5; i++) {
+                anxTotal += parseInt(document.getElementById(`anx${i}`).value);
+            }
+            const anxScore = (anxTotal / 20) * 100;
+
+            // Calculate ODD score
+            let oddTotal = 0;
+            for (let i = 1; i <= 5; i++) {
+                oddTotal += parseInt(document.getElementById(`odd${i}`).value);
+            }
+            const oddScore = (oddTotal / 20) * 100;
+
+            // Store results
+            assessmentResults = {
+                schoolName,
+                studentName,
+                studentAge,
+                studentGender,
+                teacherName,
+                supervisorName,
+                parentName,
+                observationPeriod,
+                teacherComments,
+                currentDate: new Date().toLocaleDateString(),
+                adhdScore,
+                asdScore,
+                ldScore,
+                anxScore,
+                oddScore
+            };
+
+            // Display results
+            displayResults();
+            
+            // Move to results section
+            nextSection();
+        }
+
+        function displayResults() {
+            const { studentName, studentAge, currentDate, adhdScore, asdScore, ldScore, anxScore, oddScore, teacherComments } = assessmentResults;
+            
+            // Student info
+            document.getElementById('studentInfo').innerHTML = `
+                <div class="result-card">
+                    <div class="result-header">Student: ${studentName}, Age: ${studentAge} years</div>
+                    <div>Assessment Date: ${currentDate}</div>
+                </div>
+            `;
+
+            // Create results display
+            let resultsHTML = '';
+            
+            // ADHD Results
+            resultsHTML += createResultCard(
+                'Attention & Focus (ADHD Indicators)',
+                adhdScore,
+                '#FF9800',
+                getRecommendations('adhd', adhdScore)
+            );
+            
+            // ASD Results
+            resultsHTML += createResultCard(
+                'Social Communication (ASD Indicators)',
+                asdScore,
+                '#9C27B0',
+                getRecommendations('asd', asdScore)
+            );
+            
+            // Learning Difficulties Results
+            resultsHTML += createResultCard(
+                'Learning & Development',
+                ldScore,
+                '#2196F3',
+                getRecommendations('ld', ldScore)
+            );
+            
+            // Anxiety Results
+            resultsHTML += createResultCard(
+                'Emotional Regulation (Anxiety Indicators)',
+                anxScore,
+                '#00BCD4',
+                getRecommendations('anx', anxScore)
+            );
+            
+            // ODD Results
+            resultsHTML += createResultCard(
+                'Behavioral Patterns (ODD Indicators)',
+                oddScore,
+                '#F44336',
+                getRecommendations('odd', oddScore)
+            );
+            
+            // Teacher Comments
+            if (teacherComments.trim()) {
+                resultsHTML += `
+                    <div class="result-card">
+                        <div class="result-header">Teacher's Observations</div>
+                        <p>${teacherComments}</p>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('resultsDisplay').innerHTML = resultsHTML;
+            
+            // Generate print report
+            generatePrintReport();
+        }
+
+        function createResultCard(title, score, color, recommendations) {
+            const level = getLevel(score);
+            let levelColor = '#4CAF50';
+            if (score >= 75) levelColor = '#F44336';
+            else if (score >= 50) levelColor = '#FF9800';
+            else if (score >= 25) levelColor = '#FFC107';
+            
+            return `
+                <div class="result-card">
+                    <div class="result-header">${title}</div>
+                    <div class="indicator">
+                        <div class="indicator-label">Risk Level: <span style="color: ${levelColor}; font-weight: 700;">${level}</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${score}%; background: linear-gradient(90deg, ${color}, ${levelColor});">
+                                ${Math.round(score)}%
+                            </div>
+                        </div>
+                    </div>
+                    ${recommendations}
+                </div>
+            `;
+        }
+
+        function getLevel(score) {
+            if (score < 25) return 'Low Concern';
+            if (score < 50) return 'Mild Concern';
+            if (score < 75) return 'Moderate Concern';
+            return 'High Concern';
+        }
+
+        function getRecommendations(type, score) {
+            if (score < 25) {
+                return '<div class="recommendations"><h3>✅ Within Typical Range</h3><ul><li>Continue current supportive strategies</li><li>Monitor development through regular observation</li></ul></div>';
+            }
+            
+            let html = '<div class="recommendations"><h3>📋 Recommendations</h3><ul>';
+            
+            switch(type) {
+                case 'adhd':
+                    if (score >= 50) html += '<li><strong>Consult with pediatrician</strong> about ADHD screening</li>';
+                    html += '<li>Implement structured routines and clear expectations</li>';
+                    html += '<li>Provide frequent breaks and movement opportunities</li>';
+                    html += '<li>Use visual schedules and timers</li>';
+                    html += '<li>Break tasks into smaller, manageable steps</li>';
+                    break;
+                    
+                case 'asd':
+                    if (score >= 50) html += '<li><strong>Recommend developmental evaluation</strong> by specialist</li>';
+                    html += '<li>Maintain predictable daily routines</li>';
+                    html += '<li>Use visual supports and social stories</li>';
+                    html += '<li>Provide clear, concrete communication</li>';
+                    html += '<li>Create quiet spaces for sensory breaks</li>';
+                    break;
+                    
+                case 'ld':
+                    if (score >= 50) html += '<li><strong>Request educational assessment</strong> for learning support</li>';
+                    html += '<li>Use multi-sensory teaching approaches</li>';
+                    html += '<li>Provide additional time for tasks</li>';
+                    html += '<li>Offer one-on-one or small group instruction</li>';
+                    html += '<li>Celebrate effort and small victories</li>';
+                    break;
+                    
+                case 'anx':
+                    if (score >= 50) html += '<li><strong>Consider referral</strong> to child psychologist</li>';
+                    html += '<li>Teach relaxation and breathing techniques</li>';
+                    html += '<li>Create a calm, supportive environment</li>';
+                    html += '<li>Validate feelings while building coping skills</li>';
+                    html += '<li>Maintain consistent, predictable routines</li>';
+                    break;
+                    
+                case 'odd':
+                    if (score >= 50) html += '<li><strong>Seek behavioral specialist</strong> consultation</li>';
+                    html += '<li>Use positive behavior support strategies</li>';
+                    html += '<li>Set clear, consistent boundaries</li>';
+                    html += '<li>Offer choices to provide sense of control</li>';
+                    html += '<li>Focus on building positive relationships</li>';
+                    break;
+            }
+            
+            if (score >= 25) {
+                html += '<li>Document observations for future reference</li>';
+                html += '<li>Schedule parent-teacher conference to discuss</li>';
+                html += '<li>Monitor progress and reassess in 4-6 weeks</li>';
+            }
+            
+            html += '</ul></div>';
+            return html;
+        }
+
+        function generatePrintReport() {
+            const { schoolName, studentName, teacherName, supervisorName, parentName, studentAge, teacherComments, currentDate, adhdScore, asdScore, ldScore, anxScore, oddScore } = assessmentResults;
+
+            document.getElementById('printSchoolName').textContent = schoolName;
+
+            document.getElementById('printMeta').innerHTML = `
+                <div><strong>Student:</strong> ${studentName}</div>
+                <div><strong>Age:</strong> ${studentAge} years</div>
+                <div><strong>Teacher:</strong> ${teacherName}</div>
+                <div><strong>Parent/Guardian:</strong> ${parentName}</div>
+                <div><strong>Assessment Date:</strong> ${currentDate}</div>
+                <div><strong>School:</strong> ${schoolName}</div>
+            `;
+
+            document.getElementById('printIntro').innerHTML = `
+                Dear ${parentName},<br><br>
+                We have completed a developmental screening assessment for ${studentName} to better understand their learning needs and identify areas where additional support may be beneficial. This comprehensive report summarizes our observations and provides recommendations for both home and school environments.
+            `;
+
+            document.getElementById('printResults').innerHTML = `
+                <div class="indicator-compact">
+                    <div class="indicator-label-print">Attention & Focus (ADHD):</div>
+                    <div class="indicator-value-print">${Math.round(adhdScore)}% - ${getLevel(adhdScore)}</div>
+                </div>
+                <div class="indicator-compact">
+                    <div class="indicator-label-print">Social Communication (ASD):</div>
+                    <div class="indicator-value-print">${Math.round(asdScore)}% - ${getLevel(asdScore)}</div>
+                </div>
+                <div class="indicator-compact">
+                    <div class="indicator-label-print">Learning & Development:</div>
+                    <div class="indicator-value-print">${Math.round(ldScore)}% - ${getLevel(ldScore)}</div>
+                </div>
+                <div class="indicator-compact">
+                    <div class="indicator-label-print">Emotional Regulation:</div>
+                    <div class="indicator-value-print">${Math.round(anxScore)}% - ${getLevel(anxScore)}</div>
+                </div>
+                <div class="indicator-compact">
+                    <div class="indicator-label-print">Behavioral Patterns:</div>
+                    <div class="indicator-value-print">${Math.round(oddScore)}% - ${getLevel(oddScore)}</div>
+                </div>
+            `;
+
+            const highConcern = adhdScore > 50 || asdScore > 50 || ldScore > 50 || anxScore > 50 || oddScore > 50;
+
+            // Parent Recommendations
+            let parentRecs = '<h3>Recommendations for Parents</h3><ul>';
+            
+            if (highConcern) {
+                parentRecs += '<li><strong>Professional Evaluation:</strong> We recommend consulting with your pediatrician or a specialist for comprehensive assessment.</li>';
+            }
+            
+            if (adhdScore > 25) parentRecs += '<li><strong>Attention Support:</strong> Establish consistent routines, provide quiet workspace, break tasks into smaller steps.</li>';
+            if (asdScore > 25) parentRecs += '<li><strong>Social Support:</strong> Maintain predictable routines, use clear communication, provide structured social opportunities.</li>';
+            if (ldScore > 25) parentRecs += '<li><strong>Learning Support:</strong> Allow extra time for tasks, use multi-sensory approaches, celebrate effort and progress.</li>';
+            if (anxScore > 25) parentRecs += '<li><strong>Emotional Support:</strong> Validate feelings, teach calming strategies, maintain consistent bedtime routines.</li>';
+            if (oddScore > 25) parentRecs += '<li><strong>Behavioral Support:</strong> Set clear rules, use positive reinforcement, offer choices when appropriate.</li>';
+            
+            if (!highConcern && adhdScore < 25 && asdScore < 25 && ldScore < 25 && anxScore < 25 && oddScore < 25) {
+                parentRecs += '<li>Assessment indicates typical development. Continue supporting with encouragement and open communication.</li>';
+            }
+            
+            parentRecs += '</ul>';
+            document.getElementById('printParentRecommendations').innerHTML = parentRecs;
+
+            // Teacher Strategies
+            let teacherStrat = '<h3>Classroom Strategies</h3><ul>';
+            
+            if (highConcern) {
+                teacherStrat += '<li><strong>Priority Action:</strong> Schedule parent conference within one week</li>';
+            }
+            
+            if (adhdScore > 25) teacherStrat += '<li><strong>ADHD Support:</strong> Preferential seating, movement breaks, visual timers</li>';
+            if (asdScore > 25) teacherStrat += '<li><strong>ASD Support:</strong> Visual schedules, advance warnings for changes, sensory accommodations</li>';
+            if (ldScore > 25) teacherStrat += '<li><strong>Learning Support:</strong> Multi-sensory instruction, extended time, small group work</li>';
+            if (anxScore > 25) teacherStrat += '<li><strong>Anxiety Support:</strong> Calm corner, regular check-ins, teach coping strategies</li>';
+            if (oddScore > 25) teacherStrat += '<li><strong>Behavioral Support:</strong> Clear expectations, consistent consequences, positive reinforcement</li>';
+            
+            teacherStrat += '<li><strong>Follow-up:</strong> Document observations, implement strategies, reassess in 4-6 weeks</li>';
+            
+            teacherStrat += '</ul>';
+            document.getElementById('printTeacherStrategies').innerHTML = teacherStrat;
+
+            // Teacher Comments
+            if (teacherComments && teacherComments.trim() !== '') {
+                document.getElementById('printTeacherComments').style.display = 'block';
+                document.getElementById('printCommentsText').textContent = teacherComments;
+            } else {
+                document.getElementById('printTeacherComments').style.display = 'none';
+            }
+
+            // Signatures
+            document.getElementById('printTeacherName').textContent = teacherName;
+            document.getElementById('printSupervisorName').textContent = supervisorName;
+        }
+
+        function printReport() {
+            // Show the print report
+            document.getElementById('printReport').style.display = 'block';
+            setTimeout(() => {
+                window.print();
+                // Hide after printing
+                document.getElementById('printReport').style.display = 'none';
+            }, 250);
+        }
+
+        function resetAssessment() {
+            if (confirm('Are you sure you want to start a new assessment? All current data will be lost.')) {
+                // Reset to section 1
+                currentSection = 1;
+                document.getElementById('section7').classList.remove('active');
+                document.getElementById('section1').classList.add('active');
+                updateProgressIndicator();
+                
+                // Clear all form fields
+                document.getElementById('schoolName').value = '';
+                document.getElementById('studentName').value = '';
+                document.getElementById('teacherName').value = '';
+                document.getElementById('supervisorName').value = '';
+                document.getElementById('parentName').value = '';
+                document.getElementById('studentAge').value = '';
+                document.getElementById('studentGender').value = '';
+                document.getElementById('observationPeriod').value = '1month';
+                document.getElementById('teacherComments').value = '';
+                
+                // Reset all sliders
+                const sliders = document.querySelectorAll('.slider');
+                sliders.forEach(slider => {
+                    if (slider.id.startsWith('adhd') || slider.id.startsWith('ld2') || slider.id.startsWith('ld3') || 
+                        slider.id.startsWith('ld5') || slider.id.startsWith('anx') || slider.id.startsWith('odd')) {
+                        slider.value = 0;
+                        updateSliderValue(slider.id);
+                    } else if (slider.id.startsWith('asd')) {
+                        slider.value = 4;
+                        updateSliderValue(slider.id);
+                    } else if (slider.id === 'ld4') {
+                        slider.value = 4;
+                        updateSliderValue(slider.id);
+                    }
+                });
+
+                // Reset radio button
+                document.getElementById('ld1-b').checked = true;
+                
+                // Clear results
+                document.getElementById('resultsDisplay').innerHTML = '';
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function showAbout() {
+            document.getElementById('aboutModal').style.display = 'block';
+        }
+
+        function showReferences() {
+            document.getElementById('referencesModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
